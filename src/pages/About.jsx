@@ -1,0 +1,58 @@
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { useForm, ValidationError } from '@formspree/react';
+import {QRCodeSVG} from 'qrcode.react';
+
+
+function About() {
+  const [state, handleSubmit] = useForm("xwvrllnj");
+  const vcardUrl = `public/contact.vcf`;
+  if (state.succeeded) {
+      return <p>Thanks for joining!</p>;
+  }
+  return (
+    <>
+        <NavLink to="/">page home<br/></NavLink>
+        <NavLink to="/projects">page Projet<br/></NavLink>
+        <NavLink to="/about">page About<br/></NavLink>
+        <form onSubmit={handleSubmit}>
+        <label htmlFor="email">
+            Email Address<br/>
+        </label>
+        <input
+            id="email"
+            type="email" 
+            name="email"
+        />
+        <ValidationError 
+            prefix="Email" 
+            field="email"
+            errors={state.errors}
+        /><br/>
+        <input name="subject" value="Need help with order" /><br/>
+        <textarea
+            id="message"
+            name="message"
+        />
+        <ValidationError 
+            prefix="Message" 
+            field="message"
+            errors={state.errors}
+        /><br/>
+        <button type="submit" disabled={state.submitting}>
+            Submit
+        </button>
+        </form>
+        <QRCodeSVG
+        value={vcardUrl}
+        size={160}
+        fgColor='#1E3A5F'
+        level='H'
+        includeMargin
+        />
+
+    </>
+  );
+}
+
+export default About;
