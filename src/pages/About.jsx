@@ -6,7 +6,14 @@ import {QRCodeSVG} from 'qrcode.react';
 
 function About() {
   const [state, handleSubmit] = useForm("xwvrllnj");
-  const vcardUrl = `public/contact.vcf`;
+  const vcardUrl = `BEGIN:VCARD
+VERSION:3.0
+FN: Nassim Bejaoui
+EMAIL:votre@email.com
+URL:https://linkedin.com/in/votre-profil
+URL:https://github.com/votre-pseudo
+NOTE:Développeur Front-End React — Promo 2025
+END:VCARD`;
   if (state.succeeded) {
       return <p>Thanks for joining!</p>;
   }
