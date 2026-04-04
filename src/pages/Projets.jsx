@@ -11,6 +11,7 @@ function Projets() {
                 alert('Projets introuvable')
             }
             const data = await response.json()
+            console.log(data)
             const projet = {
                 name: data.name,
                 desc: data.description,
@@ -19,6 +20,7 @@ function Projets() {
                 date: data.updated_at,
                 star: data.stargazers_count,
             }
+            console.log(projet)
             projets.set(projet)
             return projet
             } catch (error) {
@@ -26,8 +28,6 @@ function Projets() {
             return null;
         }
     }
-
-    projectData = getProjet()
 
     return (
         <div>
