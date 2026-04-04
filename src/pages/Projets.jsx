@@ -29,6 +29,7 @@ function Projets() {
         }
     }
 
+    getProjet()
     return (
         <div>
             <p>Projets</p>
