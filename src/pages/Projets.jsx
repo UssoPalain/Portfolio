@@ -21,7 +21,7 @@ function Projets() {
     }))
 
     setProjets(projetsFormates)
-
+    console.log(projetsFormates)
   } catch (error) {
     console.error("Erreur lors de la récupération des projets")
   }
