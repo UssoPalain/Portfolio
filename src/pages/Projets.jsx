@@ -11,7 +11,7 @@ function Projets() {
 
     const data = await response.json()
 
-    const projetsFormates = data.map(repo => ({
+    const projets = data.map(repo => ({
       name: repo.name,
       desc: repo.description,
       lang: repo.language,
@@ -20,10 +20,13 @@ function Projets() {
       star: repo.stargazers_count,
     }))
 
-    setProjets(projetsFormates)
-    console.log(projetsFormates)
+    console.log(projets)
+
+    return projets
+
   } catch (error) {
     console.error("Erreur lors de la récupération des projets")
+    return null
   }
 }
 
