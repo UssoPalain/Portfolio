@@ -14,6 +14,7 @@ function Projets() {
   async function getProjet(id) {
     try {
         const response = await fetch(`https://api.github.com/users/UssoPalain/repos?per_page=30&sort=updated`)
+        console.log(response)
         if (!response.ok) {
             alert('Projets introuvable')
         }
