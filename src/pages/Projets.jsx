@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 function Projets() {
-
+    const [projets] = useState([])
     async function getProjet() {
   try {
     const response = await fetch(
@@ -30,7 +30,9 @@ function Projets() {
   }
 }
 
-    getProjet()
+    useEffect(() => {
+        getProjet()
+    }, [])
     return (
         <div>
             <p>Projets</p>
