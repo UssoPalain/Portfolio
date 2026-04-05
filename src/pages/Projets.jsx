@@ -30,9 +30,7 @@ function Projets() {
   }
 }
 
-    useEffect(() => {
-        getProjet()
-    }, [])
+    getProjet()
     return (
         <div>
             <p>Projets</p>
