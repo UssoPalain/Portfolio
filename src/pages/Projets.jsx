@@ -30,13 +30,35 @@ function Projets() {
   }
 }
 
-    getProjet()
+    useEffect(() => {
+        getProjet()
+    }, [])
     return (
         <div>
             <p>Projets</p>
             <NavLink to="/">page home<br/></NavLink>
             <NavLink to="/projects">page Projet<br/></NavLink>
             <NavLink to="/about">page About<br/></NavLink>
+        
+        <h1>Mes projets</h1>
+
+        {projets.map((projet, index) => (
+            <div
+            key={index}
+            onClick={() => window.open(projet.link, "_blank")}
+            style={{
+                border: "1px solid black",
+                margin: "10px",
+                padding: "10px",
+                cursor: "pointer"
+            }}
+            >
+            <h3>{projet.name}</h3>
+            <p>{projet.desc}</p>
+            <p>{projet.lang}</p>
+            <p>⭐ {projet.star}</p>
+            </div>
+        ))}
         </div>
         
     )
