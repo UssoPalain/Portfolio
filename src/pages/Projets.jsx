@@ -21,7 +21,7 @@ function Projets() {
     }))
 
     console.log(projets)
-
+     setProjets(projets)
     return projets
 
   } catch (error) {
