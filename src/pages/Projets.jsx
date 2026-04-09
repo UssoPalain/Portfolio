@@ -44,7 +44,7 @@ function Projets() {
       <NavLink to="/projects">page Projet<br/></NavLink>
       <NavLink to="/about">page About<br/></NavLink>
 
-      <h1>Mes projets</h1>
+      <h1>Mes projets GitHub</h1>
 
       {projets.map((projet, index) => (
         <div
@@ -63,6 +63,7 @@ function Projets() {
           <p>⭐ {projet.star}</p>
         </div>
       ))}
+      <h1>Mes projets GitHub</h1>
 
     </div>
   )
