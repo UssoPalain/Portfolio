@@ -22,6 +22,7 @@ END:VCARD`;
         <NavLink to="/">page home<br/></NavLink>
         <NavLink to="/projects">page Projet<br/></NavLink>
         <NavLink to="/about">page About<br/></NavLink>
+
         <form onSubmit={handleSubmit}>
         <label htmlFor="email">
             Email Address<br/>
@@ -36,7 +37,7 @@ END:VCARD`;
             field="email"
             errors={state.errors}
         /><br/>
-        <input name="subject" value="Need help with order" /><br/>
+        <input name="subject" defaultValue="Need help with order" />
         <textarea
             id="message"
             name="message"
@@ -46,6 +47,11 @@ END:VCARD`;
             field="message"
             errors={state.errors}
         /><br/>
+        {state.errors && state.errors.length > 0 && (
+            <p>Une erreur est survenue, le message n'a pas été envoyé.</p>
+        )}
+        {state.submitting && <p>Envoi en cours</p>}
+
         <button type="submit" disabled={state.submitting}>
             Submit
         </button>

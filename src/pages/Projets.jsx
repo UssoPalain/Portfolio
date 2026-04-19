@@ -37,6 +37,8 @@ function Projets() {
   useEffect(() => {
   getProjet()
  //Quasi temps réel se recharge automatiquement sans reload la page
+ //Monsieur si vous lisez le code, je n'ai aucune idée de comment faire du temps réel
+ //ducoup j'ai contourné le problème.
   const interval = setInterval(() => {
     getProjet()
   }, 30000) // toutes les 30 secondes
