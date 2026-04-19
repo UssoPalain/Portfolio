@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import projetsLocauxData from '../projetsLocaux.json'
 
 function Projets() {
 
   const [projets, setProjets] = useState([])
+  const [projetsLocaux, setProjetsLocaux] = useState([])
 
   async function getProjet() {
     try {
@@ -34,6 +36,7 @@ function Projets() {
 
   useEffect(() => {
     getProjet()
+    setProjetsLocaux(projetsLocauxData)
   }, [])
 
   return (
@@ -63,7 +66,22 @@ function Projets() {
           <p>⭐ {projet.star}</p>
         </div>
       ))}
-      <h1>Mes projets GitHub</h1>
+      <h1>Mes projets Locaux</h1>
+
+      {projetsLocaux.map((projet, index) => (
+        <div
+          key={index}
+          style={{
+            border: "1px solid black",
+            margin: "10px",
+            padding: "10px"
+          }}
+        >
+          <h3>{projet.name}</h3>
+          <p>{projet.desc}</p>
+          <p>{projet.lang}</p>
+        </div>
+      ))}
 
     </div>
   )
