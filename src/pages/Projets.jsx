@@ -35,8 +35,14 @@ function Projets() {
   }
 
   useEffect(() => {
+  getProjet()
+ //Quasi temps réel se recharge automatiquement sans reload la page
+  const interval = setInterval(() => {
     getProjet()
-  }, [])
+  }, 30000) // toutes les 30 secondes
+
+  return () => clearInterval(interval)
+}, [])
   // Gestion des doublos
   useEffect(() => {
   if (projets.length > 0) {
