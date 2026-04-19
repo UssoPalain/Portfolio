@@ -36,8 +36,19 @@ function Projets() {
 
   useEffect(() => {
     getProjet()
-    setProjetsLocaux(projetsLocauxData)
   }, [])
+  // Gestion des doublos
+  useEffect(() => {
+  if (projets.length > 0) {
+    const nomsGithub = projets.map(p => p.name)
+
+    const projetsLocauxFiltres = projetsLocauxData.filter(
+      projetLocal => !nomsGithub.includes(projetLocal.name)
+    )
+
+    setProjetsLocaux(projetsLocauxFiltres)
+  }
+}, [projets])
 
   return (
     <div>
