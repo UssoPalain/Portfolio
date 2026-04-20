@@ -11,6 +11,7 @@ import React, { useEffect, useRef } from 'react'
 function About() {
   const [state, handleSubmit] = useForm("xwvrllnj")
   const navigate = useNavigate()
+  const hasHandled = useRef(false)
 
   const vcardUrl = `BEGIN:VCARD
 VERSION:3.0
