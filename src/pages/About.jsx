@@ -21,22 +21,22 @@ NOTE:Développeur Front-End React — Promo 2025
 END:VCARD`;
 
   useEffect(() => {
-    if (state.succeeded) {
-      toast.success("Thank for joining us !")
+  if (state.succeeded) {
+    toast.success("Thank for joining us !")
 
-      setTimeout(() => {
-        navigate('/about')
-      }, 2000)
-    }
+    setTimeout(() => {
+      navigate('/about')
+    }, 2000)
+  }
 
-    if (state.errors && state.errors.length > 0) {
-      toast.error("Une erreur est survenue, message non envoyé")
+  if (state.errors && state.errors.length > 0) {
+    toast.error("Une erreur est survenue, message non envoyé")
 
-      setTimeout(() => {
-        navigate('/about')
-      }, 2000)
-    }
-  }, [state])
+    setTimeout(() => {
+      navigate('/about')
+    }, 2000)
+  }
+}, [state])
 
   return (
     <>
