@@ -5,6 +5,7 @@ import { QRCodeSVG } from 'qrcode.react'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
+
 function About() {
   const [state, handleSubmit] = useForm("xwvrllnj")
 
