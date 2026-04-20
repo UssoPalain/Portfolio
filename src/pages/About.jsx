@@ -12,6 +12,7 @@ function About() {
   const navigate = useNavigate()
   const hasHandled = useRef(false)
   const isSubmittingRef = useRef(false)
+  const formRef = useRef(null)
 
   const vcardUrl = `BEGIN:VCARD
 VERSION:3.0
@@ -29,6 +30,7 @@ END:VCARD`;
     hasHandled.current = true
 
     toast.success("Thank for joining us !")
+    formRef.current.reset()
 
     setTimeout(() => {
       navigate('/about')
@@ -61,7 +63,7 @@ END:VCARD`;
       <NavLink to="/projects">page Projet<br/></NavLink>
       <NavLink to="/about">page About<br/></NavLink>
 
-      <form onSubmit={handleSubmit}>
+      <form ref={formRef} onSubmit={handleSubmit}>
         <label htmlFor="email">Email Address<br/></label>
 
         <input id="email" type="email" name="email" />
