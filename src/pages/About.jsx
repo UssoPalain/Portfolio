@@ -11,6 +11,7 @@ function About() {
   const [state, handleSubmit] = useForm("xwvrllnj")
   const navigate = useNavigate()
   const hasHandled = useRef(false)
+  const isSubmittingRef = useRef(false)
 
   const vcardUrl = `BEGIN:VCARD
 VERSION:3.0
@@ -42,6 +43,15 @@ END:VCARD`;
     setTimeout(() => {
       navigate('/about')
     }, 2000)
+  }
+
+  if (state.submitting && !isSubmittingRef.current) {
+    isSubmittingRef.current = true
+    toast.info("Envoi du message en cours...")
+  }
+
+  if (!state.submitting) {
+    isSubmittingRef.current = false
   }
 }, [state])
 
