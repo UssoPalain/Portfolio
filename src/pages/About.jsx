@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 
 function About() {
   const [state, handleSubmit] = useForm("xwvrllnj")
+  const navigate = useNavigate()
 
   const vcardUrl = `BEGIN:VCARD
 VERSION:3.0
@@ -24,7 +25,7 @@ END:VCARD`;
       toast.success("Thank for joining us !")
 
       setTimeout(() => {
-        navigate(0)
+        navigate('/about')
       }, 2000)
     }
 
@@ -32,7 +33,7 @@ END:VCARD`;
       toast.error("Une erreur est survenue, message non envoyé")
 
       setTimeout(() => {
-        navigate(0)
+        navigate('/about')
       }, 2000)
     }
   }, [state])
