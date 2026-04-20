@@ -5,6 +5,7 @@ import { QRCodeSVG } from 'qrcode.react'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useRef } from 'react'
 
 
 function About() {
@@ -21,7 +22,11 @@ NOTE:Développeur Front-End React — Promo 2025
 END:VCARD`;
 
   useEffect(() => {
+  if (hasHandled.current) return
+
   if (state.succeeded) {
+    hasHandled.current = true
+
     toast.success("Thank for joining us !")
 
     setTimeout(() => {
@@ -30,6 +35,8 @@ END:VCARD`;
   }
 
   if (state.errors && state.errors.length > 0) {
+    hasHandled.current = true
+
     toast.error("Une erreur est survenue, message non envoyé")
 
     setTimeout(() => {
