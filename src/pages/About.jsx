@@ -4,6 +4,7 @@ import { useForm, ValidationError } from '@formspree/react'
 import { QRCodeSVG } from 'qrcode.react'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useNavigate } from 'react-router-dom'
 
 
 function About() {
@@ -23,7 +24,7 @@ END:VCARD`;
       toast.success("Thank for joining us !")
 
       setTimeout(() => {
-        window.location.reload()
+        navigate(0)
       }, 2000)
     }
 
@@ -31,7 +32,7 @@ END:VCARD`;
       toast.error("Une erreur est survenue, message non envoyé")
 
       setTimeout(() => {
-        window.location.reload()
+        navigate(0)
       }, 2000)
     }
   }, [state])
