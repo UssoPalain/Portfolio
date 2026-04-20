@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useForm, ValidationError } from '@formspree/react'
 import { QRCodeSVG } from 'qrcode.react'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useNavigate } from 'react-router-dom'
-import React, { useEffect, useRef } from 'react'
 
 
 function About() {
