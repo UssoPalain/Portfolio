@@ -80,8 +80,8 @@ END:VCARD`;
           Submit
         </button>
       </form>
-      
-      <a href="/cv.pdf" download>
+
+      <a href="/Nassim_Bejaoui_CV.pdf" download>
         <button>Télécharger mon CV</button>
       </a>
 
