@@ -96,6 +96,7 @@ END:VCARD`;
       <a href="/Nassim_Bejaoui_CV.pdf" download>
         <button>Télécharger mon CV</button>
       </a>
+      <br/>
 
       <QRCodeSVG
         value={vcardUrl}
