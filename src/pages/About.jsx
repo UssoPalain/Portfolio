@@ -69,7 +69,6 @@ END:VCARD`;
 
       <form ref={formRef} onSubmit={handleSubmit}>
         <label htmlFor="email">Email Address<br/></label>
-
         <input id="email" type="email" name="email" />
 
         <ValidationError prefix="Email" field="email" errors={state.errors} /><br/>
@@ -84,6 +83,7 @@ END:VCARD`;
         </select>
         <br/>
 
+        <label htmlFor="reason">Message :<br/></label>
         <textarea id="message" name="message" placeholder="20 Caratères Minimum" value={message} onChange={(e) => setMessage(e.target.value)}/>
 
         <ValidationError prefix="Message" field="message" errors={state.errors} /><br/>
