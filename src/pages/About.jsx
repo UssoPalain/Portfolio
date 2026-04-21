@@ -75,13 +75,13 @@ END:VCARD`;
         <ValidationError prefix="Email" field="email" errors={state.errors} /><br/>
 
         <label htmlFor="reason">Objet :<br/></label>
-        <input list="objets" id="reason" name="reason" />
-        <datalist id="objets">
-          <option value="Opportunité"></option>
-          <option value="Question"></option>
-          <option value="Collaboration"></option>
-          <option value="Autre"></option>
-        </datalist>
+        <select id="reason" name="reason">
+          <option value="">Choisir un objet</option>
+          <option value="Opportunité">Opportunité</option>
+          <option value="Question">Question</option>
+          <option value="Collaboration">Collaboration</option>
+          <option value="Autre">Autre</option>
+        </select>
         <br/>
 
         <textarea id="message" name="message" placeholder="20 Caratères Minimum" value={message} onChange={(e) => setMessage(e.target.value)}/>
