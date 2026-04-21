@@ -56,7 +56,6 @@ END:VCARD`;
   //bloque boucle
   if (!state.submitting) {
     isSubmittingRef.current = false
-    hasHandled.current = false
   }
 }, [state])
 
