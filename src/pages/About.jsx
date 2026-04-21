@@ -76,7 +76,9 @@ END:VCARD`;
 
         <input name="subject" defaultValue="Need help with order" /><br/>
 
-        <textarea id="message" name="message" value={message} onChange={(e) => setMessage(e.target.value)}/>
+        <textarea id="message" name="message" value={message} onChange={(e) => setMessage(e.target.value)}>
+        20 Caratères Minimum
+        </textarea>
 
         <ValidationError prefix="Message" field="message" errors={state.errors} /><br/>
 
