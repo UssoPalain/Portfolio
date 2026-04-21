@@ -26,38 +26,37 @@ END:VCARD`;
 
   useEffect(() => {
 
-  if (state.succeeded) {
+    //envoi réussi
+  if (state.succeeded && !hasHandled.current) {
     hasHandled.current = true
 
     toast.success("Thank for joining us !")
     if (formRef.current) {
       formRef.current.reset()
     }
-
     setMessage("")
-
-    setTimeout(() => {
-      navigate('/about')
-    }, 2000)
+    setTimeout(() => {navigate('/about')}, 2000)
   }
 
-  if (state.errors && state.errors.length > 0) {
+  //erreur d'envoi
+  if (state.errors && state.errors.length > 0 && !hasHandled.current) {
     hasHandled.current = true
 
     toast.error("Une erreur est survenue, message non envoyé")
 
-    setTimeout(() => {
-      navigate('/about')
-    }, 2000)
+    setTimeout(() => {navigate('/about')}, 2000)
   }
 
+  //envoi en cours
   if (state.submitting && !isSubmittingRef.current) {
     isSubmittingRef.current = true
     toast.info("Envoi du message en cours...")
   }
 
+  //bloque boucle
   if (!state.submitting) {
     isSubmittingRef.current = false
+    hasHandled.current = false
   }
 }, [state])
 
