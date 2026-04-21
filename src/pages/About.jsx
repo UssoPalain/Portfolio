@@ -53,7 +53,7 @@ END:VCARD`;
     toast.info("Envoi du message en cours...")
   }
 
-  //bloque boucle
+  //bloque boucle toast
   if (!state.submitting) {
     isSubmittingRef.current = false
   }
@@ -96,6 +96,8 @@ END:VCARD`;
       </a>
       <br/>
 
+      <a>Scannez pour enregistrer mon contact</a>
+      <br/>
       <QRCodeSVG
         value={vcardUrl}
         size={160}
