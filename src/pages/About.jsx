@@ -14,6 +14,9 @@ function About() {
   const isSubmittingRef = useRef(false)
   const formRef = useRef(null)
 
+  const [message, setMessage] = useState("")
+  const [error, setError] = useState("")
+
   const vcardUrl = `BEGIN:VCARD
 VERSION:3.0
 FN: Nassim Bejaoui
@@ -63,7 +66,17 @@ END:VCARD`;
       <NavLink to="/projects">page Projet<br/></NavLink>
       <NavLink to="/about">page About<br/></NavLink>
 
-      <form ref={formRef} onSubmit={handleSubmit}>
+      <form ref={formRef} onSubmit={(e) => {
+          if (message.length < 20) {
+            e.preventDefault()
+            setError("Le message doit contenir au moins 20 caractères")
+            return
+          }
+
+          setError("")
+          handleSubmit(e)
+        }}
+      >
         <label htmlFor="email">Email Address<br/></label>
 
         <input id="email" type="email" name="email" />
@@ -72,7 +85,12 @@ END:VCARD`;
 
         <input name="subject" defaultValue="Need help with order" /><br/>
 
-        <textarea id="message" name="message" />
+        <textarea
+          id="message"
+          name="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
 
         <ValidationError prefix="Message" field="message" errors={state.errors} /><br/>
 
