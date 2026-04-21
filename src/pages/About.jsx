@@ -69,7 +69,7 @@ END:VCARD`;
 
       <form ref={formRef} onSubmit={handleSubmit}>
         <label htmlFor="email">Email Address<br/></label>
-        <input id="email" type="email" name="email" />
+        <input id="email" type="email" name="email" required />
 
         <ValidationError prefix="Email" field="email" errors={state.errors} /><br/>
 
