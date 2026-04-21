@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useForm, ValidationError } from '@formspree/react'
 import { QRCodeSVG } from 'qrcode.react'
@@ -13,7 +13,7 @@ function About() {
   const hasHandled = useRef(false)
   const isSubmittingRef = useRef(false)
   const formRef = useRef(null)
-  
+  const [message, setMessage] = useState("")
 
   const vcardUrl = `BEGIN:VCARD
 VERSION:3.0
@@ -25,13 +25,16 @@ NOTE:Développeur Front-End React — Promo 2025
 END:VCARD`;
 
   useEffect(() => {
-  if (hasHandled.current) return
 
   if (state.succeeded) {
     hasHandled.current = true
 
     toast.success("Thank for joining us !")
-    formRef.current.reset()
+    if (formRef.current) {
+      formRef.current.reset()
+    }
+
+    setMessage("")
 
     setTimeout(() => {
       navigate('/about')
@@ -73,7 +76,7 @@ END:VCARD`;
 
         <input name="subject" defaultValue="Need help with order" /><br/>
 
-        <textarea id="message" name="message" />
+        <textarea id="message" name="message" value={message} onChange={(e) => setMessage(e.target.value)}/>
 
         <ValidationError prefix="Message" field="message" errors={state.errors} /><br/>
 
