@@ -74,7 +74,15 @@ END:VCARD`;
 
         <ValidationError prefix="Email" field="email" errors={state.errors} /><br/>
 
-        <input name="subject" defaultValue="Need help with order" /><br/>
+        <label for="reason">Objet :<br/></label>
+        <input liste="objets" id="reason "name="subject" />
+        <datalist id="objets">
+          <option value="Opportunité"></option>
+          <option value="Question"></option>
+          <option value="Collaboration"></option>
+          <option value="Autre"></option>
+        </datalist>
+        <br/>
 
         <textarea id="message" name="message" placeholder="20 Caratères Minimum" value={message} onChange={(e) => setMessage(e.target.value)}/>
 
