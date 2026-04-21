@@ -80,6 +80,10 @@ END:VCARD`;
           Submit
         </button>
       </form>
+      
+      <a href="/cv.pdf" download>
+        <button>Télécharger mon CV</button>
+      </a>
 
       <QRCodeSVG
         value={vcardUrl}
