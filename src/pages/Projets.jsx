@@ -69,13 +69,15 @@ function Projets() {
 
   return (
     <div>
-      <p>Projets</p>
-
       <div className="header">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/projects">Projects</NavLink>
-        <NavLink to="/about">About</NavLink>
-      </div>
+              <h1 className="page-title">Projets</h1>
+      
+              <nav className="nav-links">
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/projects">Projects</NavLink>
+                <NavLink to="/about">About</NavLink>
+              </nav>
+            </div>
 
       <h1>Mes projets GitHub</h1>
 

@@ -61,11 +61,14 @@ END:VCARD`;
 
   return (
     <>
-    <p>A Propos</p>
       <div className="header">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/projects">Projects</NavLink>
-        <NavLink to="/about">About</NavLink>
+        <h1 className="page-title">About</h1>
+
+        <nav className="nav-links">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/about">About</NavLink>
+        </nav>
       </div>
 
       <form ref={formRef} onSubmit={handleSubmit}>
