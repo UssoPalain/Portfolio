@@ -14,7 +14,7 @@ function Home() {
         </nav>
       </div>
 
-      <img href="/130-Bejaoui Nassim-2.jpg"></img>
+      <img src="/130-Bejaoui-Nassim-2.jpg" alt="Photo de Nassim"/>
       <p>bejaouinassim64@gmail.com</p>
       <h3>Hello, I'm</h3>
       <h1>Nassim Bejaoui</h1>
