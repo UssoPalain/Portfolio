@@ -22,6 +22,63 @@ body {
   white-space: nowrap;
 }
 
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 40px 60px;
+  gap: 40px;
+}
+
+/* LEFT = 1/3 */
+.hero-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-left img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  border: 2px solid #30363d;
+}
+
+/* RIGHT = 2/3 */
+.hero-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Texte */
+.intro {
+  font-size: 14px;
+  color: #8b949e;
+  margin: 0;
+}
+
+.name {
+  font-size: 56px;
+  font-weight: 800;
+  margin: 5px 0;
+  color: #c9d1d9;
+  line-height: 1.1;
+}
+
+.role {
+  font-size: 22px;
+  font-weight: 500;
+  color: #58a6ff;
+  margin: 5px 0;
+}
+
+.email {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #8b949e;
+}
+
 .nav-links {
   flex: 1;
   display: flex;
