@@ -6,13 +6,21 @@ function Projets() {
 
   const [projets, setProjets] = useState([])
   const [projetsLocaux, setProjetsLocaux] = useState([])
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   async function getProjet() {
     try {
+      setLoading(true)
+      setError(null)
 
       const response = await fetch(
         'https://api.github.com/users/UssoPalain/repos?per_page=30&sort=updated'
       )
+
+      if (!response.ok) {
+        throw new Error("Erreur API")
+      }
 
       const data = await response.json()
 
@@ -25,12 +33,13 @@ function Projets() {
         star: repo.stargazers_count,
       }))
 
-      console.log(projetsFormates)
-
       setProjets(projetsFormates)
 
     } catch (error) {
-      console.error("Erreur lors de la récupération des projets")
+      console.error(error)
+      setError("Impossible de charger les projets")
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -68,7 +77,18 @@ function Projets() {
 
       <h1>Mes projets GitHub</h1>
 
-      {projets.map((projet) => (
+      {loading && <p>Chargement...</p>}
+
+      {error && (
+        <div>
+          <p>{error}</p>
+          <button onClick={getProjet} disabled={loading}>
+            {loading ? "Chargement..." : "Réessayer"}
+          </button>
+        </div>
+      )}
+
+      {!error && !loading && projets.map((projet) => (
         <a
           key={projet.name}
           href={projet.link}
