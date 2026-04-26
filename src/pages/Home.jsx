@@ -36,6 +36,7 @@ function Home() {
           Volontaire, je me distingue par mon engagement au service du collectif et mon goût d'apprendre.
         </p>
       </div>
+      <p>Pour le prof : Le portfolio est toujour en construction mais je manque de temps donc je vous le rend avec les options demandés, mais je compte continuer a le développer sur mon temps libre.</p>
     </div>
   )
 }
