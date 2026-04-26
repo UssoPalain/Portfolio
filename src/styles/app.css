@@ -71,6 +71,26 @@ body {
   margin: 5px 0;
 }
 
+.profile-section {
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.profile-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #58a6ff;
+}
+
+.profile-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #c9d1d9;
+}
+
 .email {
   margin-top: 15px;
   font-size: 14px;

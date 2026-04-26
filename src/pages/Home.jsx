@@ -27,13 +27,15 @@ function Home() {
         </div>
       </div>
 
-      <h2>Mon Profil</h2>
-      <p>
-        Bonjour,Je suis Nassim Béjaoui Élève de M2i. 
-        Mes Passions sont la Programmation et le domaine de L'informatique en général. 
-        Dynamique et ayant un excellent sens du contact, j'aime collaborer avec des interlocuteurs variés. 
-        Volontaire, je me distingue par mon engagement au service du collectif et mon goût d'apprendre.
-      </p>
+      <div className="profile-section">
+        <h2 className="profile-title">Mon Profil</h2>
+        <p className="profile-text">
+          Bonjour, je suis Nassim Béjaoui Élève de M2i. 
+          Mes passions sont la programmation et le domaine de l'informatique en général. 
+          Dynamique et ayant un excellent sens du contact, j'aime collaborer avec des interlocuteurs variés. 
+          Volontaire, je me distingue par mon engagement au service du collectif et mon goût d'apprendre.
+        </p>
+      </div>
     </div>
   )
 }
