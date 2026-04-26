@@ -13,6 +13,17 @@ function Home() {
           <NavLink to="/about">About</NavLink>
         </nav>
       </div>
+
+      <img href="/130-Bejaoui Nassim-2.jpg"></img>
+
+
+
+
+
+
+
+
+
     </div>
   )
 }
