@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import projetsLocauxData from '../data/projets.json'
-import './styles/App.css'
+import './styles/app.css'
 
 function Projets() {
 
