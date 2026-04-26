@@ -71,13 +71,15 @@ function Projets() {
     <div>
       <p>Projets</p>
 
-      <NavLink to="/">page home<br/></NavLink>
-      <NavLink to="/projects">page Projet<br/></NavLink>
-      <NavLink to="/about">page About<br/></NavLink>
+      <div className="header">
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/projects">Projects</NavLink>
+        <NavLink to="/about">About</NavLink>
+      </div>
 
       <h1>Mes projets GitHub</h1>
 
-      {loading && <p>Chargement...</p>}
+      {loading && <div className="spinner"></div>}
 
       {error && (
         <div>
@@ -94,15 +96,8 @@ function Projets() {
           href={projet.link}
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            display: "block",
-            border: "1px solid black",
-            margin: "10px",
-            padding: "10px",
-            cursor: "pointer",
-            textDecoration: "none",
-            color: "inherit"
-          }}
+          className="card"
+          style={{ textDecoration: "none", color: "inherit" }}
         >
           <h3>{projet.name}</h3>
           <p>{projet.desc}</p>
@@ -113,14 +108,7 @@ function Projets() {
       <h1>Mes projets Locaux</h1>
 
       {projetsLocaux.map((projet, index) => (
-        <div
-          key={index}
-          style={{
-            border: "1px solid black",
-            margin: "10px",
-            padding: "10px"
-          }}
-        >
+        <div key={projet.name} className="card">
           <h3>{projet.name}</h3>
           <p>{projet.desc}</p>
           <p>{projet.lang}</p>

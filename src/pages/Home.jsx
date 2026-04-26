@@ -5,9 +5,11 @@ function Home() {
   return (
     <div>
         <p>Home</p>
-        <NavLink to="/">page home<br/></NavLink>
-        <NavLink to="/projects">page Projet<br/></NavLink>
-        <NavLink to="/about">page About<br/></NavLink>
+        <div className="header">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/about">About</NavLink>
+        </div>
     </div>
   )
 }

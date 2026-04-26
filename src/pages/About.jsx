@@ -61,9 +61,11 @@ END:VCARD`;
 
   return (
     <>
-      <NavLink to="/">page home<br/></NavLink>
-      <NavLink to="/projects">page Projet<br/></NavLink>
-      <NavLink to="/about">page About<br/></NavLink>
+      <div className="header">
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/projects">Projects</NavLink>
+        <NavLink to="/about">About</NavLink>
+      </div>
 
       <form ref={formRef} onSubmit={handleSubmit}>
         <label htmlFor="email">Email Address<br/></label>
@@ -96,16 +98,24 @@ END:VCARD`;
       </a>
       <br/>
 
-      <a>Scannez pour enregistrer mon contact</a>
-      <br/>
-      <QRCodeSVG
-        value={vcardUrl}
-        size={160}
-        fgColor='#1E3A5F'
-        level='H'
-        includeMargin
-      />
+      <div className="about-container">
+        <h1>À propos</h1>
+        <p>
+          Développeur passionné, je réalise des projets web en JavaScript et React.
+          Ce portfolio regroupe mes projets GitHub ainsi que des projets personnels.
+        </p>
 
+        <div className="qr-box">
+          <p>Scannez pour enregistrer mon contact</p>
+          <QRCodeSVG
+            value={vcardUrl}
+            size={160}
+            fgColor='#1E3A5F'
+            level='H'
+            includeMargin
+          />
+        </div>
+      </div>
       <ToastContainer />
     </>
   )
