@@ -17,13 +17,13 @@ function Home() {
       <div className="hero">
         <div className="hero-left">
           <img src="/130-Bejaoui-Nassim-2.jpg" alt="Photo de Nassim" />
+          <p className="email">bejaouinassim64@gmail.com</p>
         </div>
 
         <div className="hero-right">
           <p className="intro">Hello, I'm</p>
           <h1 className="name">Nassim Bejaoui</h1>
           <h2 className="role">Etudiant en M2I</h2>
-          <p className="email">bejaouinassim64@gmail.com</p>
         </div>
       </div>
 
