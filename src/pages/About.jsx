@@ -71,6 +71,8 @@ END:VCARD`;
         </nav>
       </div>
 
+      <h2 className="form-title">Envoyer un Mail</h2>
+
       <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">
           <label htmlFor="email">Email Address</label>
