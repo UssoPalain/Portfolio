@@ -68,22 +68,27 @@ function Projets() {
 
       <h1>Mes projets GitHub</h1>
 
-      {projets.map((projet, index) => (
-        <div
-          key={index}
-          onClick={() => window.open(projet.link, "_blank")}
+      {projets.map((projet) => (
+        <a
+          key={projet.name}
+          href={projet.link}
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
+            display: "block",
             border: "1px solid black",
             margin: "10px",
             padding: "10px",
-            cursor: "pointer"
+            cursor: "pointer",
+            textDecoration: "none",
+            color: "inherit"
           }}
         >
           <h3>{projet.name}</h3>
           <p>{projet.desc}</p>
           <p>{projet.lang}</p>
           <p>⭐ {projet.star}</p>
-        </div>
+        </a>
       ))}
       <h1>Mes projets Locaux</h1>
 
