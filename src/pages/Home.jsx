@@ -4,12 +4,15 @@ import { NavLink } from 'react-router-dom'
 function Home() {
   return (
     <div>
-        <p>Home</p>
-        <div className="header">
+      <div className="header">
+        <h1 className="page-title">Home</h1>
+
+        <nav className="nav-links">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/about">About</NavLink>
-        </div>
+        </nav>
+      </div>
     </div>
   )
 }

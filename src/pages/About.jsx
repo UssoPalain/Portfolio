@@ -61,6 +61,7 @@ END:VCARD`;
 
   return (
     <>
+    <p>A Propos</p>
       <div className="header">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/projects">Projects</NavLink>

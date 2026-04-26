@@ -10,8 +10,36 @@ body {
   padding: 15px 30px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
   border-bottom: 1px solid #30363d;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #58a6ff;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  color: #c9d1d9;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #58a6ff;
+}
+
+/* Optionnel : lien actif plus visible */
+.nav-links a.active {
+  color: #58a6ff;
+  font-weight: 700;
+  border-bottom: 2px solid #58a6ff;
 }
 
 .header a {
