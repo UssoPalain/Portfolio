@@ -71,34 +71,47 @@ END:VCARD`;
         </nav>
       </div>
 
-      <form ref={formRef} onSubmit={handleSubmit}>
-        <label htmlFor="email">Email Address<br/></label>
-        <input id="email" type="email" name="email" required />
+      <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
+        <div className="form-group">
+          <label htmlFor="email">Email Address</label>
+          <input id="email" type="email" name="email" required />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
+        </div>
 
-        <ValidationError prefix="Email" field="email" errors={state.errors} /><br/>
+        <div className="form-group">
+          <label htmlFor="reason">Objet</label>
+          <select id="reason" name="reason">
+            <option value="">Choisir un objet</option>
+            <option value="Opportunité">Opportunité</option>
+            <option value="Question">Question</option>
+            <option value="Collaboration">Collaboration</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
 
-        <label htmlFor="reason">Objet :<br/></label>
-        <select id="reason" name="reason">
-          <option value="">Choisir un objet</option>
-          <option value="Opportunité">Opportunité</option>
-          <option value="Question">Question</option>
-          <option value="Collaboration">Collaboration</option>
-          <option value="Autre">Autre</option>
-        </select>
-        <br/>
+        <div className="form-group">
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="20 caractères minimum"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+          <ValidationError prefix="Message" field="message" errors={state.errors} />
+        </div>
 
-        <label htmlFor="reason">Message :<br/></label>
-        <textarea id="message" name="message" placeholder="20 Caratères Minimum" value={message} onChange={(e) => setMessage(e.target.value)}/>
-
-        <ValidationError prefix="Message" field="message" errors={state.errors} /><br/>
-
-        <button type="submit" disabled={state.submitting || message.length < 20}>
-          Submit
+        <button
+          className="submit-btn"
+          type="submit"
+          disabled={state.submitting || message.length < 20}
+        >
+          Envoyer
         </button>
       </form>
 
-      <a href="/Nassim_Bejaoui_CV.pdf" download>
-        <button>Télécharger mon CV</button>
+      <a href="/Nassim_Bejaoui_CV.pdf" download className="cv-button">
+        Télécharger mon CV
       </a>
       <br/>
 
